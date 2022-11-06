@@ -53,10 +53,11 @@ class _TodoPageState extends State<TodoPage> {
               return Dismissible(
                 key: Key(todo.id.toString()),
                 onDismissed: (direction) {
-                  // context.read<TodoListProvider>().deleteTodo(todo.title);
+                  context.read<TodoListProvider>().changeSelectedTodo(todo);
+                  context.read<TodoListProvider>().deleteTodo();
 
-                  // ScaffoldMessenger.of(context).showSnackBar(
-                  //     SnackBar(content: Text('${todo.title} dismissed')));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('${todo.title} dismissed')));
                 },
                 background: Container(
                   color: Colors.red,
@@ -89,13 +90,15 @@ class _TodoPageState extends State<TodoPage> {
                       ),
                       IconButton(
                         onPressed: () {
-                          // showDialog(
-                          //   context: context,
-                          //   builder: (BuildContext context) => TodoModal(
-                          //     type: 'Delete',
-                          //     todoIndex: index,
-                          //   ),
-                          // );
+                          context
+                              .read<TodoListProvider>()
+                              .changeSelectedTodo(todo);
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) => TodoModal(
+                              type: 'Delete',
+                            ),
+                          );
                         },
                         icon: const Icon(Icons.delete_outlined),
                       )
