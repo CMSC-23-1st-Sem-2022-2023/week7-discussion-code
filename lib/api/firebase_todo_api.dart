@@ -38,4 +38,14 @@ class FirebaseTodoAPI {
       return "Failed with error '${e.code}: ${e.message}";
     }
   }
+
+  Future<String> toggleStatus(String? id, bool status) async {
+    try {
+      await db.collection("todos").doc(id).update({"completed": status});
+
+      return "Successfully edited todo!";
+    } on FirebaseException catch (e) {
+      return "Failed with error '${e.code}: ${e.message}";
+    }
+  }
 }

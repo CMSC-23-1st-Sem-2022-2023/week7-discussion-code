@@ -68,9 +68,8 @@ class _TodoPageState extends State<TodoPage> {
                   leading: Checkbox(
                     value: todo.completed,
                     onChanged: (bool? value) {
-                      context
-                          .read<TodoListProvider>()
-                          .toggleStatus(index, value!);
+                      context.read<TodoListProvider>().changeSelectedTodo(todo);
+                      context.read<TodoListProvider>().toggleStatus(value!);
                     },
                   ),
                   trailing: Row(
