@@ -8,24 +8,22 @@ import 'package:flutter/material.dart';
 import 'package:week7_networking_discussion/api/firebase_todo_api.dart';
 import 'package:week7_networking_discussion/api/todo_api.dart';
 import 'package:week7_networking_discussion/models/todo_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TodoListProvider with ChangeNotifier {
-  late TodoAPI todoAPI;
-  // Todo list is now a Future
-  late Future<List<Todo>> _todoList;
   late FirebaseTodoAPI firebaseService;
+  late Stream<QuerySnapshot> _todosStream;
 
   TodoListProvider() {
-    todoAPI = TodoAPI();
-    fetchTodos();
     firebaseService = FirebaseTodoAPI();
+    fetchTodos();
   }
 
   // getter
-  Future<List<Todo>> get todo => _todoList;
+  Stream<QuerySnapshot> get todos => _todosStream;
 
   void fetchTodos() {
-    _todoList = todoAPI.fetchTodos();
+    _todosStream = firebaseService.getAllTodos();
     notifyListeners();
   }
 
