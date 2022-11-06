@@ -1,4 +1,4 @@
-# Simple Todo App
+# Simple Todo App with Firebase
 
 This simple todo app has an add, edit, and delete functionality. It uses a provider for state management
 
@@ -18,3 +18,10 @@ lib
 * Models - contains the data model used
 * Providers - contains the Todo provider that contains the data and method logic
 * Screens - contains the screen/widgets used
+
+## Functionalities
+- Add todo
+- Edit Todo
+- Mark todo as done/undone
+
+These functionalities can be further improved using your own implementation.
