@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:week7_networking_discussion/models/todo_model.dart';
 import 'package:week7_networking_discussion/providers/todo_provider.dart';
-// import 'package:week7_networking_discussion/screens/modal_todo.dart';
+import 'package:week7_networking_discussion/screens/modal_todo.dart';
 
 class TodoPage extends StatefulWidget {
   const TodoPage({super.key});
@@ -101,14 +101,12 @@ class _TodoPageState extends State<TodoPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // showDialog(
-          //   context: context,
-          //   builder: (BuildContext context) => TodoModal(
-          //     type: 'Add',
-          //     todoIndex:
-          //         -1, // Flag to identify that this particular modal is for add
-          //   ),
-          // );
+          showDialog(
+            context: context,
+            builder: (BuildContext context) => TodoModal(
+              type: 'Add',
+            ),
+          );
         },
         child: const Icon(Icons.add_outlined),
       ),

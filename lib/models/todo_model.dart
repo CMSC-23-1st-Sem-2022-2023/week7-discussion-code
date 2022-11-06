@@ -8,13 +8,13 @@ import 'dart:convert';
 
 class Todo {
   final int userId;
-  final int id;
+  String? id;
   String title;
   bool completed;
 
   Todo({
     required this.userId,
-    required this.id,
+    this.id,
     required this.title,
     required this.completed,
   });
@@ -32,5 +32,13 @@ class Todo {
   static List<Todo> fromJsonArray(String jsonData) {
     final Iterable<dynamic> data = jsonDecode(jsonData);
     return data.map<Todo>((dynamic d) => Todo.fromJson(d)).toList();
+  }
+
+  Map<String, dynamic> toJson(Todo todo) {
+    return {
+      'userId': todo.userId,
+      'title': todo.title,
+      'completed': todo.completed,
+    };
   }
 }
