@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "700827935460",
+    "project_id": "cmsc23-todo-app-jgteknomo",
+    "storage_bucket": "cmsc23-todo-app-jgteknomo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700827935460:android:48b39d71eeaa6f138a42f1",
+        "android_client_info": {
+          "package_name": "com.example.week7_networking_discussion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700827935460-4tp3pdptr9811h7282ljoasvumigqobu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1-OMN38nQDeCp5mIMKaRNnDyD6CTvHuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700827935460-4tp3pdptr9811h7282ljoasvumigqobu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
