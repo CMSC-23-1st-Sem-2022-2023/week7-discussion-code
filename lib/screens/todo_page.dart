@@ -113,6 +113,9 @@ class _TodoPageState extends State<TodoPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          context
+              .read<TodoListProvider>()
+              .changeSelectedTodo(Todo(userId: 1, completed: false, title: ""));
           showDialog(
             context: context,
             builder: (BuildContext context) => TodoModal(
